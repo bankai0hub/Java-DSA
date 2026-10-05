@@ -8,7 +8,7 @@ public class practice {
 
         System.out.println("Enter the elements of the array: ");
         for (int i = 0; i < size; i++) {
-            arr[i] = Scc.nextInt();
+            arr[i] = Sc.nextInt();
         }
 
         int max = arr[0];

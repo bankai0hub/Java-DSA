@@ -1,19 +1,20 @@
 class Solution {
-    public boolean isUgly(int n) {
-        if(n<1){
-            return false;
+    public int singleNonDuplicate(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            // mid ^ 1 bitwise XOR:
+            // if mid is even, mid ^ 1 gives mid + 1
+            // if mid is odd, mid ^ 1 gives mid - 1
+            if (nums[mid] == nums[mid ^ 1]) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
         }
-        else if(n/2>0){
-            return true;
-        }
-        else if(n/3>0){
-            return true;
-        }
-        else if(n/5>0){
-            return true;
-        }
-        else{
-            return false;
-        }
+
+        return nums[low];
     }
-}
+}
