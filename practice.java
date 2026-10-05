@@ -1,7 +1,23 @@
+import java.util.Scanner;
 public class practice {
     public static void main(String[] args) {
-        int m = 10, n =5;
-        int res = n++ + m * m++ - 5;
-        System.out.println(res);
+        Scanner Sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array: ");
+        int size = Sc.nextInt();
+        int[] arr = new int[size];
+
+        System.out.println("Enter the elements of the array: ");
+        for (int i = 0; i < size; i++) {
+            arr[i] = Scc.nextInt();
+        }
+
+        int max = arr[0];
+        for (int i = 1; i < size; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        System.out.println("The maximum value in the array is: " + max);
+        
     }
 }
